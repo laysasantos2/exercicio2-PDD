@@ -3,12 +3,12 @@ package models;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Bill {
+public class Boleto {
     private int codigo;
     private LocalDate data;
     private double valor;
 
-    public Bill(int codigo, String data, double valor) {
+    public Boleto(int codigo, String data, double valor) {
         this.codigo = codigo;
         this.data = formataDataStringToLocal(data);
         this.valor = valor;

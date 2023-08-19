@@ -11,12 +11,12 @@ import java.time.format.DateTimeParseException;
 
 import org.junit.Test;
 
-import models.Bill;
+import models.Boleto;
 
-public class BillTest {
+public class BoletoTest {
     @Test
     public void createBillObject() {
-        Bill bill = new Bill(0001, "05/07/2008", 500);
+        Boleto bill = new Boleto(0001, "05/07/2008", 500);
 
         assertNotNull(bill);
 
@@ -28,7 +28,7 @@ public class BillTest {
     @Test
     public void createDataIncorrectly() {
         try {
-            new Bill(1, "0585/0712/2008", 500);
+            new Boleto(1, "0585/0712/2008", 500);
         } catch (Exception error) {
             assertNotNull(error);
         }
@@ -37,7 +37,7 @@ public class BillTest {
     @Test
     public void setDataIncorrectly() {
         try {
-            Bill bill = new Bill(1, "05/08/2008", 500);
+            Boleto bill = new Boleto(1, "05/08/2008", 500);
             bill.setData("4343/212/434");
             fail();
         } catch (Exception error) {
