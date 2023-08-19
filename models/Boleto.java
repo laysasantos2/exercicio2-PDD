@@ -3,6 +3,8 @@ package models;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import utils.formataData;
+
 public class Boleto {
     private int codigo;
     private LocalDate data;
@@ -10,19 +12,8 @@ public class Boleto {
 
     public Boleto(int codigo, String data, double valor) {
         this.codigo = codigo;
-        this.data = formataDataStringToLocal(data);
+        this.data = formataData.formataDataStringToLocal(data);
         this.valor = valor;
-    }
-
-    private String formataDataLocalToString(LocalDate data) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return data.format(formatter);
-    }
-
-    private LocalDate formataDataStringToLocal(String data) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate returnData = LocalDate.parse(data, formatter);
-        return returnData;
     }
 
     public int getCodigo() {
@@ -30,7 +21,7 @@ public class Boleto {
     }
 
     public String getData() {
-        return this.formataDataLocalToString(data);
+        return formataData.formataDataLocalToString(data);
     }
 
     public double getValor() {
@@ -42,7 +33,7 @@ public class Boleto {
     }
 
     public void setData(String data) {
-        this.data = formataDataStringToLocal(data);
+        this.data = formataData.formataDataStringToLocal(data);
     }
 
     public void setValor(double valor) {
