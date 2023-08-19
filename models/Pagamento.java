@@ -7,12 +7,12 @@ import utils.formataData;
 public class Pagamento {
     private double valor;
     private LocalDate data;
-    private String tipo;
+    private TipoPagamento tipoPagamento;
 
-    public Pagamento(double valor, String data, String tipo) {
+    public Pagamento(double valor, String data, TipoPagamento tipoPagamento) {
         this.valor = valor;
         this.data = formataData.formataDataStringToLocal(data);
-        this.tipo = tipo;
+        this.tipoPagamento = tipoPagamento;
     }
 
     public double getValor() {
@@ -31,11 +31,11 @@ public class Pagamento {
         this.data = formataData.formataDataStringToLocal(data);
     }
 
-    public String getTipo() {
-        return this.tipo;
+    public TipoPagamento getTipo() {
+        return this.tipoPagamento;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipo(TipoPagamento tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
     }
 }
