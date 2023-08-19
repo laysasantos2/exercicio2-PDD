@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.Test;
 
-import models.Boleto;
 import models.Fatura;
 
 public class FaturaTest {
