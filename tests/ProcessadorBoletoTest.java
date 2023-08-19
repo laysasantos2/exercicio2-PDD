@@ -45,10 +45,16 @@ public class ProcessadorBoletoTest {
         Fatura fatura = new Fatura("05/08/2023", 1500.00, "Cliente");
         List<Boleto> boletos = new ArrayList<>();
         boletos.add(new Boleto(001, "05/08/2023", 500.00));
+        boletos.add(new Boleto(002, "05/08/2023", 400.00));
+        boletos.add(new Boleto(003, "05/08/2023", 600.00));
 
         ProcessadorBoleto.processarFatura(fatura, boletos);
 
-        assertEquals(1, fatura.getPagamentos().size());
+        assertEquals(3, fatura.getPagamentos().size());
         assertEquals(TipoPagamento.BOLETO, fatura.getPagamentos().get(0).getTipo());
+        assertEquals(TipoPagamento.BOLETO, fatura.getPagamentos().get(1).getTipo());
+        assertEquals(TipoPagamento.BOLETO, fatura.getPagamentos().get(2).getTipo());
+
+        assertTrue(fatura.isPaga());
     }
 }
