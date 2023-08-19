@@ -1,15 +1,18 @@
 package tests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 import models.Boleto;
 import models.Fatura;
 import models.ProcessadorBoleto;
+import models.TipoPagamento;
 
 public class ProcessadorBoletoTest {
     @Test
@@ -46,6 +49,6 @@ public class ProcessadorBoletoTest {
         ProcessadorBoleto.processarFatura(fatura, boletos);
 
         assertEquals(1, fatura.getPagamentos().size());
-        assertEquals("BOLETO", fatura.getPagamentos().get(0).getTipo());
+        assertEquals(TipoPagamento.BOLETO, fatura.getPagamentos().get(0).getTipo());
     }
 }
