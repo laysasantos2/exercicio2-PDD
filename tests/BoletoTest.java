@@ -26,7 +26,7 @@ public class BoletoTest {
     }
 
     @Test
-    public void createDataIncorrectly() {
+    public void createDateIncorrectly() {
         try {
             new Boleto(1, "0585/0712/2008", 500);
         } catch (Exception error) {
@@ -35,7 +35,7 @@ public class BoletoTest {
     }
 
     @Test
-    public void setDataIncorrectly() {
+    public void setDateIncorrectly() {
         try {
             Boleto bill = new Boleto(1, "05/08/2008", 500);
             bill.setData("4343/212/434");
