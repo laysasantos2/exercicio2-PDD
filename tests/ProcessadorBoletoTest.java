@@ -12,8 +12,6 @@ import models.Fatura;
 import models.ProcessadorBoleto;
 
 public class ProcessadorBoletoTest {
-    ProcessadorBoleto processadorBoleto = new ProcessadorBoleto();
-
     @Test
     public void testProcessarFaturaNaoPaga() {
         Fatura fatura = new Fatura("05/08/2023", 1500.00, "Cliente");
@@ -21,7 +19,7 @@ public class ProcessadorBoletoTest {
         boletos.add(new Boleto(001, "05/08/2023", 500.00));
         boletos.add(new Boleto(002, "05/08/2023", 400.00));
 
-        processadorBoleto.processarFatura(fatura, boletos);
+        ProcessadorBoleto.processarFatura(fatura, boletos);
 
         assertFalse(fatura.isPaga());
     }
@@ -34,7 +32,7 @@ public class ProcessadorBoletoTest {
         boletos.add(new Boleto(002, "05/08/2023", 400.00));
         boletos.add(new Boleto(003, "05/08/2023", 600.00));
 
-        processadorBoleto.processarFatura(fatura, boletos);
+        ProcessadorBoleto.processarFatura(fatura, boletos);
 
         assertTrue(fatura.isPaga());
     }
@@ -45,7 +43,7 @@ public class ProcessadorBoletoTest {
         List<Boleto> boletos = new ArrayList<>();
         boletos.add(new Boleto(001, "05/08/2023", 500.00));
 
-        processadorBoleto.processarFatura(fatura, boletos);
+        ProcessadorBoleto.processarFatura(fatura, boletos);
 
         assertEquals(1, fatura.getPagamentos().size());
         assertEquals("BOLETO", fatura.getPagamentos().get(0).getTipo());
