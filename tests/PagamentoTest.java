@@ -9,7 +9,7 @@ import models.TipoPagamento;
 
 public class PagamentoTest {
     @Test
-    public void createPagamento() {
+    public void criarPagamento() {
         Pagamento pagamento = new Pagamento(1000, "03/05/2005", TipoPagamento.BOLETO);
 
         assertEquals(pagamento.getValor(), 1000);

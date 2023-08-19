@@ -10,7 +10,7 @@ import models.Fatura;
 
 public class FaturaTest {
     @Test
-    public void createFatura() {
+    public void criarFatura() {
         Fatura fatura = new Fatura("05/09/2003", 5000, "João");
 
         assertEquals(fatura.getData(), "05/09/2003");

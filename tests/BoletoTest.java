@@ -10,7 +10,7 @@ import models.Boleto;
 
 public class BoletoTest {
     @Test
-    public void createBillObject() {
+    public void criarObjeto() {
         Boleto bill = new Boleto(0001, "05/07/2008", 500);
 
         assertNotNull(bill);
