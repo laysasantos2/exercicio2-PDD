@@ -39,4 +39,12 @@ public class Tarefa {
     public void setData(String data) {
         this.data = formataData.formataStringData(data);
     }
+
+    public String getPrioridade() {
+        return this.prioridade;
+    }
+
+    public void setPrioridade(String prioridade) {
+        this.prioridade = prioridade;
+    }
 }
