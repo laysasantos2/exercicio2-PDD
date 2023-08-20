@@ -1,5 +1,6 @@
 package gerenciadorDeTarefa;
 
+import GerenciadorDeTarefa.Tarefa;
 import org.junit.jupiter.api.Test;
 
 public class testTarefa {
