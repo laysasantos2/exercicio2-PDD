@@ -7,9 +7,9 @@ public class Tarefa  {
     private String titulo;
     private String descricao;
     private LocalDate data;
-    private String prioridade;
+    private int prioridade;
 
-    public Tarefa(String titulo, String descricao, String data, String prioridade) {
+    public Tarefa(String titulo, String descricao, String data, int prioridade) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.data = formataData.formataStringData(data);
@@ -40,11 +40,11 @@ public class Tarefa  {
         this.data = formataData.formataStringData(data);
     }
 
-    public String getPrioridade() {
+    public int getPrioridade() {
         return this.prioridade;
     }
 
-    public void setPrioridade(String prioridade) {
+    public void setPrioridade(int prioridade) {
         this.prioridade = prioridade;
     }
 

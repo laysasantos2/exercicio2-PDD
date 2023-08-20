@@ -43,9 +43,8 @@ public class testGerenciaTarefa {
     public void exibirTarefaPrioridade() {
         gerencia.novaTarefa("estudar IA", "busca em profundidade", "18/08/2023", 3);
         gerencia.novaTarefa("estudar concorrente", "semaforos", "16/08/2023", 2);
-        System.out.println(gerencia.exibirTarefaPrioridade());
-        assertEquals(gerencia.exibirTarefaPrioridade(), "Titulo: estudar concorrente, Descrição: semaforos, Data: 16/08/2023, Prioridade: 2\n" +
-                "Titulo: estudar IA, Descrição: semaforos, Data: 18/08/2023, Prioridade: 3\n");
+        assertEquals(gerencia.exibirTarefaPrioridade(), "Titulo: estudar concorrente, Descricao: semaforos, Data: 16/08/2023, Prioridade: 2\n" +
+                "Titulo: estudar IA, Descricao: busca em profundidade, Data: 18/08/2023, Prioridade: 3\n");
     }
 
 

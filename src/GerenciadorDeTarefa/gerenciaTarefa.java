@@ -13,12 +13,12 @@ public class gerenciaTarefa {
         this.tarefas = new ArrayList<Tarefa>();
     }
 
-    public void novaTarefa(String titulo, String descricao, String data, String prioridade) {
+    public void novaTarefa(String titulo, String descricao, String data, int prioridade) {
         Tarefa t = new Tarefa(titulo, descricao, data, prioridade);
         this.tarefas.add(t);
     }
 
-    public void atualizaTarefa(String oldTitulo, String newTitulo, String descricao, String data, String prioridade) {
+    public void atualizaTarefa(String oldTitulo, String newTitulo, String descricao, String data, int prioridade) {
         Tarefa t = procuraTarefaTitulo(oldTitulo);
         t.setTitulo(newTitulo);
         t.setDescricao(descricao);
@@ -70,6 +70,22 @@ public class gerenciaTarefa {
         }
         return saida;
 
+    }
+
+    public String exibirTarefaPrioridade() {
+        String saida = "";
+        Collections.sort(tarefas, new Comparator<Tarefa>() {
+            @Override
+            public int compare(Tarefa o1, Tarefa o2) {
+                return Integer.compare(o1.getPrioridade(), o2.getPrioridade());
+            }
+        });
+
+        for (Tarefa obj : tarefas) {
+            saida += obj.toString();
+        }
+
+        return saida;
     }
 
 }
