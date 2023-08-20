@@ -1,6 +1,9 @@
 package GerenciadorDeTarefa;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class gerenciaTarefa {
 
@@ -52,6 +55,22 @@ public class gerenciaTarefa {
             }
         }
         return null;
+    }
+
+    public String exibirTarefaData() {
+        String saida = "";
+        Collections.sort(tarefas, new Comparator<Tarefa>() {
+            @Override
+            public int compare(Tarefa o1, Tarefa o2) {
+                return o1.getData().compareTo(o2.getData());
+            }
+        });
+
+        for (Tarefa obj : tarefas) {
+            saida += obj.toString();
+        }
+        return saida;
+
     }
 
 

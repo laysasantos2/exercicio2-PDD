@@ -2,7 +2,7 @@ package GerenciadorDeTarefa;
 
 import java.time.LocalDate;
 
-public class Tarefa {
+public class Tarefa  {
 
     private String titulo;
     private String descricao;

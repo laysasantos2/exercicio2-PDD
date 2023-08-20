@@ -34,8 +34,8 @@ public class testGerenciaTarefa {
     @Test
     public void exibirTarefaPorData() {
         gerencia.novaTarefa("estudar IA", "busca em profundidade", "18/08/2023", "baixa");
-        gerencia.novaTarefa("estudar concorrente", "semaforos", "16/08/2023", "média");
-        assertEquals(gerencia.exibirTarefaData(), "Titulo: estudar concorrente, Decrição: semaforos, Data: 16/08/2023, Prioridade: média\n" +
-                "Titulo: estudar IA, Descrição: semaforos, Data: 18/08/2023, Prioridade: baixa\n");
+        gerencia.novaTarefa("estudar concorrente", "semaforos", "16/08/2023", "media");
+        assertEquals(gerencia.exibirTarefaData(), "Titulo: estudar concorrente, Descricao: semaforos, Data: 16/08/2023, Prioridade: media\n" +
+                "Titulo: estudar IA, Descricao: busca em profundidade, Data: 18/08/2023, Prioridade: baixa\n");
     }
 }
