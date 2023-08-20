@@ -26,4 +26,11 @@ public class testTarefa {
         assertEquals(t.getDescricao(), "estrutura de dados");
     }
 
+    @Test
+    public void atualizarData() {
+        Tarefa t = new Tarefa("estudar concorrente", "semaforos", "18/08/2023", "média");
+        t.setData("20/08/2023");
+        assertEquals(t.getData(), "20/08/2023");
+    }
+
 }
