@@ -15,4 +15,12 @@ public class Tarefa {
         this.data = formataData.formataStringData(data);
         this.prioridade = prioridade;
     }
+
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 }
