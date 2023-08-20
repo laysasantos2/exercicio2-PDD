@@ -1,7 +1,6 @@
 package GerenciadorDeTarefa;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -72,7 +71,5 @@ public class gerenciaTarefa {
         return saida;
 
     }
-
-
 
 }
