@@ -23,4 +23,12 @@ public class Tarefa {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 }

@@ -15,4 +15,6 @@ public class formataData {
         LocalDate dataf = LocalDate.parse(data, formatter);
         return dataf;
     }
+
+
 }
