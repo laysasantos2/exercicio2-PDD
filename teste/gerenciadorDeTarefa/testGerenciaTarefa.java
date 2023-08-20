@@ -4,6 +4,7 @@ import GerenciadorDeTarefa.gerenciaTarefa;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class testGerenciaTarefa {
 
@@ -23,4 +24,10 @@ public class testGerenciaTarefa {
 
     }
 
+    @Test
+    public void excluirTarefa() {
+        gerencia.novaTarefa("estudar concorrente", "semaforos", "18/08/2023", "média");
+        gerencia.excluiTarefa("estudar concorrente");
+        assertFalse(gerencia.tarefaExiste("estudar concorrente"));
+    }
 }
