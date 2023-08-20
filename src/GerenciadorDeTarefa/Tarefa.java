@@ -47,4 +47,11 @@ public class Tarefa {
     public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
     }
+
+    public String toString() {
+        return "Titulo: " + getTitulo() +
+                ", Descricao: " + getDescricao() +
+                ", Data: " + getData() +
+                ", Prioridade: " + getPrioridade() + "\n";
+    }
 }
