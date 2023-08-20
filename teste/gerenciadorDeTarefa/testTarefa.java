@@ -18,4 +18,12 @@ public class testTarefa {
         t.setTitulo("estudar IA");
         assertEquals(t.getTitulo(), "estudar IA");
     }
+
+    @Test
+    public void atualizarDescricao() {
+        Tarefa t = new Tarefa("estudar concorrente", "semaforos", "18/08/2023", "média");
+        t.setDescricao("estrutura de dados");
+        assertEquals(t.getDescricao(), "estrutura de dados");
+    }
+
 }
