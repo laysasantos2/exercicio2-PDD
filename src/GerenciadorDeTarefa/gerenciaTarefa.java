@@ -26,6 +26,19 @@ public class gerenciaTarefa {
         this.tarefas.set(indice, t);
     }
 
+    public void excluiTarefa(String titulo) {
+        Tarefa t = procuraTarefaTitulo(titulo);
+        this.tarefas.remove(t);
+    }
+
+    public boolean tarefaExiste(String titulo) {
+        Tarefa t = procuraTarefaTitulo(titulo);
+        if(t == null) {
+            return false;
+        }
+        return true;
+    }
+
     public String getTarefa(String titulo) {
         Tarefa t = procuraTarefaTitulo(titulo);
         int indice = this.tarefas.indexOf(t);
