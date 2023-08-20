@@ -33,4 +33,11 @@ public class testTarefa {
         assertEquals(t.getData(), "20/08/2023");
     }
 
+    @Test
+    public void atualizarPrioridade() {
+        Tarefa t = new Tarefa("estudar concorrente", "semaforos", "18/08/2023", "média");
+        t.setPrioridade("alta");
+        assertEquals(t.getPrioridade(), "alta");
+    }
+
 }
