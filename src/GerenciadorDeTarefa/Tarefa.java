@@ -31,4 +31,12 @@ public class Tarefa {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public String getData() {
+        return formataData.formataDataString(data);
+    }
+
+    public void setData(String data) {
+        this.data = formataData.formataStringData(data);
+    }
 }
