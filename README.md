@@ -1,4 +1,4 @@
-# exercicio2-PDD
+# exercicio2-TDD
 ### aluna: Laysa Santos
 Sobre a experiência com o uso do TDD: No inicio tive um pouco de 
 dificuldade para entender o conceito de criar primeiro o teste e 

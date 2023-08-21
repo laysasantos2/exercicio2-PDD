@@ -11,6 +11,13 @@ public class Tarefa  {
     private LocalDate data;
     private int prioridade;
 
+    /**
+     * Criando o tipo tarefa
+     * @param titulo titulo a ser usado
+     * @param descricao da tarefa a ser feita
+     * @param data de vencimento da tarefa
+     * @param prioridade em uma escala de 1 - alto, 2 - medio e 3 - baixo.
+     */
     public Tarefa(String titulo, String descricao, String data, int prioridade) {
         this.titulo = titulo;
         this.descricao = descricao;
