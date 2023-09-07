@@ -4,3 +4,6 @@
 - Pontos positivos: confiança no código e necessidade de pensar em implementações fáceis de testar.
 - Pontos negativos: maior demora na implementação.
 - Dificuldades enfrentadas: foi difícil se adaptar ao método no início e resistir a tentação de implementar primeiro para depois testar. 
+
+# Exercício - Testes funcionais
+### Aluno: João Gabriel Abrantes de Oliveira Uchôa
