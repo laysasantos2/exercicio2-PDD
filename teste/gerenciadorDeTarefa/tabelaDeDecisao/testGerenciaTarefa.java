@@ -38,14 +38,22 @@ public class testGerenciaTarefa {
     }
 
     @Test
-    public void criarTarefaQueJaExiste() {
+    public void criarTarefaComParametroInvalidos() {
         try {
-            gerencia.novaTarefa("estudar concorrente", "semaforos", "18/08/2023", 2);
-            gerencia.novaTarefa("estudar concorrente", "semaforos", "18/08/2023", 2);
+            gerencia.novaTarefa("estudar concorrente", "semaforos", "00/08/2023", 2);
             fail("era esperado uma excecao");
         } catch (IllegalArgumentException e) {
 
         }
+
+    }
+
+    @Test
+    public void atualizarTarefaEDeletar() {
+        gerencia.novaTarefa("estudar concorrente", "semaforos", "18/08/2023", 2);
+        gerencia.atualizaTarefa("estudar concorrente", "estudar IA", "busca em profundidade", "19/08/2023", 1);
+        gerencia.excluiTarefa("estudar IA");
+        assertEquals(gerencia.tarefaExiste("estudar IA"), false);
 
     }
 
