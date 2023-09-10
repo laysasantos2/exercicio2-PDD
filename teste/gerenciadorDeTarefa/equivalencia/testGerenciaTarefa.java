@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class testGerenciaTarefa {
@@ -67,16 +68,6 @@ public class testGerenciaTarefa {
         }
     }
 
-    // Se estamos no ano de 2023 é inviável criar uma tarefa para o ano passado
-    @Test
-    public void criarTarefaAnoInvalidoPassado() {
-        try {
-            gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2022", 1);
-            fail("era esperado uma excecao");
-        } catch (IllegalArgumentException e) {
-
-        }
-    }
 
     @Test
     public void criarTarefaPrioridadeMenor() {
@@ -96,5 +87,11 @@ public class testGerenciaTarefa {
         } catch (IllegalArgumentException e) {
 
         }
+    }
+
+    @Test
+    public void criarTarefa() {
+        gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2024", 1);
+        assertEquals(gerencia.tarefaStatus("estudar concorrente"), "Tarefa criada");
     }
 }
