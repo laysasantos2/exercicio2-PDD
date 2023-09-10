@@ -21,7 +21,7 @@ public class testGerenciaTarefa {
     public void atualizarTarefaQueNaoExiste() {
         try {
             gerencia.atualizaTarefa("estudar concorrente", "estudar IA", "busca em profundidade",
-                    "19/08/2023", 1);
+                    "19/08/2024", 1);
             fail("era esperado uma excecao");
         } catch (IllegalArgumentException e) {
 
