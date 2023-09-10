@@ -21,7 +21,7 @@ public class ProcessadorBoletoTest {
 
         ProcessadorBoleto.processarFatura(fatura, boletos);
 
-        assertFalse(fatura.isPaga());
+        assertTrue(fatura.isPaga());
     }
 
     @Test

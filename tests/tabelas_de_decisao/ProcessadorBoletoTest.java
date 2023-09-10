@@ -14,10 +14,10 @@ import models.ProcessadorBoleto;
 
 public class ProcessadorBoletoTest {
     @Test
-    public void testSomaBoletoMaiorQueFatura() {
+    public void testSomaBoletoMaiorOuIgualQueFatura() {
         Fatura fatura = new Fatura("05/08/2023", 500.00, "Cliente");
         List<Boleto> boletos = new ArrayList<>();
-        boletos.add(new Boleto(001, "05/08/2023", 501.00));
+        boletos.add(new Boleto(001, "05/08/2023", 500.00));
 
         ProcessadorBoleto.processarFatura(fatura, boletos);
 
@@ -26,11 +26,11 @@ public class ProcessadorBoletoTest {
     }
 
     @Test
-    public void testSomaBoletoMenorOuIgualFatura() {
+    public void testSomaBoletoMenorQueFatura() {
         Fatura fatura = new Fatura("05/08/2023", 500.00, "Cliente");
 
         List<Boleto> boletos = new ArrayList<>();
-        boletos.add(new Boleto(001, "05/08/2023", 500.00));
+        boletos.add(new Boleto(001, "05/08/2023", 499.99));
 
         ProcessadorBoleto.processarFatura(fatura, boletos);
 
