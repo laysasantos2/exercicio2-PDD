@@ -71,7 +71,27 @@ public class testGerenciaTarefa {
     @Test
     public void criarTarefaAnoInvalidoPassado() {
         try {
-            gerencia.novaTarefa("estudar concorrente", "semaforos", "32/08/2022", 1);
+            gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2022", 1);
+            fail("era esperado uma excecao");
+        } catch (IllegalArgumentException e) {
+
+        }
+    }
+
+    @Test
+    public void criarTarefaPrioridadeMenor() {
+        try {
+            gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2024", 0);
+            fail("era esperado uma excecao");
+        } catch (IllegalArgumentException e) {
+
+        }
+    }
+
+    @Test
+    public void criarTarefaPrioridadeMaior() {
+        try {
+            gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2024", 4);
             fail("era esperado uma excecao");
         } catch (IllegalArgumentException e) {
 
