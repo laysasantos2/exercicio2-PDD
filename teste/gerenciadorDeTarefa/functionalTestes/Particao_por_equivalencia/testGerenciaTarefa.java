@@ -1,4 +1,4 @@
-package gerenciadorDeTarefa.equivalencia;
+package gerenciadorDeTarefa.functionalTestes.Particao_por_equivalencia;
 
 import gerenciadorDeTarefa.gerenciaTarefa;
 import org.junit.jupiter.api.BeforeEach;

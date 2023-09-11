@@ -1,4 +1,4 @@
-package gerenciadorDeTarefa.tabelaDeDecisao;
+package gerenciadorDeTarefa.functionalTestes.tabelaDeDecisao;
 
 import gerenciadorDeTarefa.gerenciaTarefa;
 import org.junit.jupiter.api.BeforeEach;
