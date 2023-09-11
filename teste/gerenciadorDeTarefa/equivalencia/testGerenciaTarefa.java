@@ -19,7 +19,39 @@ public class testGerenciaTarefa {
     }
 
     @Test
-    public void criarTarefaDiaInvalidoMenor() {
+    public void criaTarefa() {
+        gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2024", 1);
+        assertEquals(gerencia.tarefaStatus("estudar concorrente"), "Tarefa criada");
+    }
+
+    @Test
+    public void criarTarefaTituloInvalido() {
+        try {
+            gerencia.novaTarefa("", "semaforos", "30/08/2024", 1);
+            fail("era esperado uma excecao");
+        } catch (IllegalArgumentException e) {
+
+        }
+    }
+
+    @Test
+    public void criaTarefaComDescricao() {
+        gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2024", 1);
+        assertEquals(gerencia.tarefaStatus("estudar concorrente"), "Tarefa criada");
+    }
+
+    @Test
+    public void criarTarefaSemDescricao() {
+        try {
+            gerencia.novaTarefa("estudar concorrente", "", "30/08/2024", 1);
+            fail("era esperado uma excecao");
+        } catch (IllegalArgumentException e) {
+
+        }
+    }
+
+    @Test
+    public void criarTarefaDiaInvalido() {
         try {
             gerencia.novaTarefa("estudar concorrente", "semaforos", "00/08/2023", 1);
             fail("era esperado uma excecao");
@@ -29,17 +61,7 @@ public class testGerenciaTarefa {
     }
 
     @Test
-    public void criarTarefaDiaInvalidoMaior() {
-        try {
-            gerencia.novaTarefa("estudar concorrente", "semaforos", "32/08/2023", 1);
-            fail("era esperado uma excecao");
-        } catch (IllegalArgumentException e) {
-
-        }
-    }
-
-    @Test
-    public void criarTarefaMesInvalidoMenor() {
+    public void criarTarefaMesInvalido() {
         try {
             gerencia.novaTarefa("estudar concorrente", "semaforos", "31/00/2023", 1);
             fail("era esperado uma excecao");
@@ -48,15 +70,6 @@ public class testGerenciaTarefa {
         }
     }
 
-    @Test
-    public void criarTarefaMesInvalidoMaior() {
-        try {
-            gerencia.novaTarefa("estudar concorrente", "semaforos", "30/13/2023", 1);
-            fail("era esperado uma excecao");
-        } catch (IllegalArgumentException e) {
-
-        }
-    }
 
     @Test
     public void criarTarefaAnoInvalido() {
@@ -68,9 +81,15 @@ public class testGerenciaTarefa {
         }
     }
 
+    @Test
+    public void criaTarefaDataValida() {
+        gerencia.novaTarefa("estudar concorrente", "semaforos", "05/08/2024", 1);
+        assertEquals(gerencia.tarefaStatus("estudar concorrente"), "Tarefa criada");
+    }
+
 
     @Test
-    public void criarTarefaPrioridadeMenor() {
+    public void criarTarefaPrioridadeInvalida() {
         try {
             gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2024", 0);
             fail("era esperado uma excecao");
@@ -80,17 +99,7 @@ public class testGerenciaTarefa {
     }
 
     @Test
-    public void criarTarefaPrioridadeMaior() {
-        try {
-            gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2024", 4);
-            fail("era esperado uma excecao");
-        } catch (IllegalArgumentException e) {
-
-        }
-    }
-
-    @Test
-    public void criarTarefa() {
+    public void criarTarefaPrioridadeValida() {
         gerencia.novaTarefa("estudar concorrente", "semaforos", "30/08/2024", 1);
         assertEquals(gerencia.tarefaStatus("estudar concorrente"), "Tarefa criada");
     }
