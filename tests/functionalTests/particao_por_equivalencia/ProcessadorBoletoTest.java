@@ -1,4 +1,4 @@
-package tests.functional_tests.particao_por_equivalencia;
+package tests.functionalTests.particao_por_equivalencia;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

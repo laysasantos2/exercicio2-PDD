@@ -1,4 +1,4 @@
-package tests.functional_tests.tabelas_de_decisao;
+package tests.functionalTests.tabelas_de_decisao;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
