@@ -16,7 +16,7 @@ public class BoletoTest {
 
     @BeforeEach
     public void setUp() {
-        this.boleto = new Boleto(1, "2008-07-05", 500);
+        this.boleto = new Boleto(1, "07/05/2008", 500);
     }
 
     @Test
@@ -24,7 +24,7 @@ public class BoletoTest {
     public void criarObjeto() {
         assertNotNull(boleto);
         assertEquals(1, boleto.getCodigo());
-        assertEquals("2008-07-05", boleto.getData());
+        assertEquals("07/05/2008", boleto.getData());
         assertEquals(500, boleto.getValor());
     }
 
@@ -32,7 +32,7 @@ public class BoletoTest {
     @DisplayName("Teste de criação de objeto Boleto com data incorreta")
     public void createDateIncorrectly() {
         assertThrows(DateTimeException.class, () -> {
-            new Boleto(1, "0585-07-12", 500);
+            new Boleto(1, "32/12/842", 500);
         });
     }
 
@@ -40,7 +40,7 @@ public class BoletoTest {
     @DisplayName("Teste de definição de data incorreta")
     public void setDateIncorrectly() {
         assertThrows(DateTimeException.class, () -> {
-            boleto.setData("4343-02-434");
+            boleto.setData("12/17/1324");
         });
     }
 }
