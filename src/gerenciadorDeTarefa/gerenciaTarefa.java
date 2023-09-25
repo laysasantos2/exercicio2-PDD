@@ -18,6 +18,9 @@ public class gerenciaTarefa {
      */
 
     public void novaTarefa(String titulo, String descricao, String data, int prioridade) {
+        if(titulo.equals("") || descricao.equals("") || data.equals("") || prioridade < 1 || prioridade > 3 ) {
+            throw new IllegalArgumentException("argumento invalido");
+        }
         Tarefa t = new Tarefa(titulo, descricao, data, prioridade);
         this.tarefas.add(t);
     }
@@ -27,6 +30,9 @@ public class gerenciaTarefa {
      */
 
     public void atualizaTarefa(String oldTitulo, String newTitulo, String descricao, String data, int prioridade) {
+        if(!tarefaExiste(oldTitulo)) {
+            throw new IllegalArgumentException ("a tarefa não existe");
+        }
         Tarefa t = procuraTarefaTitulo(oldTitulo);
         t.setTitulo(newTitulo);
         t.setDescricao(descricao);
@@ -73,6 +79,14 @@ public class gerenciaTarefa {
                 return t;
             }
         }
+        return null;
+    }
+
+    public String tarefaStatus(String titulo) {
+        if(tarefaExiste(titulo)) {
+            return "Tarefa criada";
+        }
+
         return null;
     }
 

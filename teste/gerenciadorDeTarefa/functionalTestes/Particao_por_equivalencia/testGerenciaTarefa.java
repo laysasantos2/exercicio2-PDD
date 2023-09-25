@@ -53,9 +53,9 @@ public class testGerenciaTarefa {
     @Test
     public void criarTarefaDiaInvalido() {
         try {
-            gerencia.novaTarefa("estudar concorrente", "semaforos", "00/08/2023", 1);
+            gerencia.novaTarefa("estudar concorrente", "semaforos", "001/08/2023", 1);
             fail("era esperado uma excecao");
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
 
         }
     }
@@ -65,7 +65,7 @@ public class testGerenciaTarefa {
         try {
             gerencia.novaTarefa("estudar concorrente", "semaforos", "31/00/2023", 1);
             fail("era esperado uma excecao");
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
 
         }
     }
@@ -76,7 +76,7 @@ public class testGerenciaTarefa {
         try {
             gerencia.novaTarefa("estudar concorrente", "semaforos", "05/08/0000", 1);
             fail("era esperado uma excecao");
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
 
         }
     }

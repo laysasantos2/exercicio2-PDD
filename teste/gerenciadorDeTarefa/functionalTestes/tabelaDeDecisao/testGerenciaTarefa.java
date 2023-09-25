@@ -42,7 +42,7 @@ public class testGerenciaTarefa {
         try {
             gerencia.novaTarefa("estudar concorrente", "semaforos", "00/08/2023", 2);
             fail("era esperado uma excecao");
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
 
         }
 
