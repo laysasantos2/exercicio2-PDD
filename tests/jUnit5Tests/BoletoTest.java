@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import models.Boleto;
+
 import java.time.DateTimeException;
 
 @DisplayName("Testes para a classe Boleto")
@@ -42,5 +43,19 @@ public class BoletoTest {
         assertThrows(DateTimeException.class, () -> {
             boleto.setData("12/17/1324");
         });
+    }
+
+    @Test
+    @DisplayName("Teste de definição do código")
+    public void setCodigo() {
+        boleto.setCodigo(2);
+        assertEquals(2, boleto.getCodigo());
+    }
+
+    @Test
+    @DisplayName("Teste de definição do valor")
+    public void setValor() {
+        boleto.setValor(1000.0);
+        assertEquals(1000.0, boleto.getValor(), 0.01);
     }
 }

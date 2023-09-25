@@ -37,4 +37,20 @@ public class FaturaTest {
             fatura.setData("4343/212/434");
         });
     }
+
+    @Test
+    @DisplayName("Teste de definição do valor")
+    public void setValor() {
+        Fatura fatura = new Fatura("05/09/2003", 5000, "João");
+        fatura.setValor(6000);
+        assertEquals(6000, fatura.getValor());
+    }
+
+    @Test
+    @DisplayName("Teste de definição do cliente")
+    public void setCliente() {
+        Fatura fatura = new Fatura("05/09/2003", 5000, "João");
+        fatura.setCliente("Maria");
+        assertEquals("Maria", fatura.getCliente());
+    }
 }

@@ -40,4 +40,11 @@ public class PagamentoTest {
         pagamento.setData("15/06/2006");
         assertEquals("15/06/2006", pagamento.getData(), "A data do pagamento deve ser '15/06/2006' após a alteração.");
     }
+
+    @Test
+    @DisplayName("Teste de alteração do tipo de pagamento")
+    public void alterarTipoPagamento() {
+        pagamento.setTipo(TipoPagamento.CARTAO);
+        assertEquals(TipoPagamento.CARTAO, pagamento.getTipo(), "O tipo de pagamento deve ser CARTAO após a alteração.");
+    }
 }
